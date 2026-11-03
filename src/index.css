@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.65), 0 0 40px rgba(245, 158, 11, 0.35);
+  }
+}
+
+/* Custom Sleek Scrollbar for panels */
+.hand-panel::-webkit-scrollbar,
+.help-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.hand-panel::-webkit-scrollbar-track,
+.help-content::-webkit-scrollbar-track {
+  background: rgba(15, 15, 15, 0.5);
+  border-radius: 4px;
+}
+
+.hand-panel::-webkit-scrollbar-thumb,
+.help-content::-webkit-scrollbar-thumb {
+  background: rgba(160, 160, 160, 0.3);
+  border-radius: 4px;
+}
+
+.hand-panel::-webkit-scrollbar-thumb:hover,
+.help-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.5);
+}
+
+/* Canvas Dimmed State before starting */
+#overlay.dimmed {
+  filter: grayscale(0.8) brightness(0.4);
+}
+
+/* Volume Meter Bar Highlighting */
+.vol-bar {
+  background: #262626;
+  border-radius: 2px;
+  transition: background-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.vol-bar.lit {
+  background: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+}
+
+/* Active Highlight for Left Hand Degree Gestures */
+.gesture-guide-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(23, 23, 23, 0.7);
+  border: 1px solid rgba(38, 38, 38, 0.8);
+  font-size: 11px;
+  transition: all 0.15s ease;
+}
+
+.gesture-guide-row.active {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.7);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+  transform: translateX(2px);
+}
+
+.gesture-guide-row.active .gesture-guide-note {
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.gesture-guide-note {
+  color: #f59e0b;
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.gesture-guide-gesture {
+  font-size: 14px;
+}
+
+/* Voicing Card Active State */
+.voicing-card {
+  transition: all 0.15s ease;
+}
+
+.voicing-card.active {
+  background: rgba(14, 165, 233, 0.25) !important;
+  border-color: rgba(56, 189, 248, 0.7) !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  transform: translateX(-2px);
+}
+
+/* Hand panel collapse transitions */
+.hand-panel.panel-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+}
+
+/* Modal styling */
+#helpModal:not(.hidden) {
+  display: flex;
+}
+
+#helpModal.hidden {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hand-panel {
+    width: 240px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hand-panel {
+    width: calc(100vw - 24px) !important;
+  }
+}
+
+@media (max-height: 700px) {
+  .hand-panel {
+    max-height: calc(100vh - 120px) !important;
+  }
+}

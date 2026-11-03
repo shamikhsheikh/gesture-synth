@@ -1,0 +1,6 @@
+{
+  "name": "Gesture Synth (BALA SCHOOL)",
+  "description": "An interactive camera-based musical instrument for students using hand gestures to control chords, tone, and expression.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
